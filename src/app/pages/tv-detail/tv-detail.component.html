@@ -10,9 +10,13 @@
         </div>
 
         <div class="flex flex-col justify-center">
-            <h1 class="text-white text-2xl font-bold mb-2">{{ tvDetails.original_name }}</h1>
-            <p class="text-white">Release Date: {{ tvDetails.release_date }}</p>
-            <p class="text-white mt-2 sm:text-wrap lg:mt-4 lg:text-base">{{ tvDetails.overview }}</p>
+            <h1 class="text-yellow-300 text-2xl font-bold mb-2">{{ tvDetails.original_name }}</h1>
+            <p class="text-white font-semibold">Release Date: <span class="text-yellow-500">{{ tvDetails.first_air_date }}</span></p>
+            <p class="text-white font-semibold">Popularity: <span class="text-yellow-500">{{ tvDetails.popularity }}</span></p>
+            <p class="text-white font-semibold">Vote Average: <span class="text-yellow-500">{{ tvDetails.vote_average }}</span></p>
+            <p class="text-white font-semibold">Vote Count: <span class="text-yellow-500">{{ tvDetails.vote_count }}</span></p>
+            <p class="text-white font-semibold">Country: <span class="text-yellow-500">{{ tvDetails.origin_country }}</span></p>
+            <p class="text-white font-semibold mt-2 sm:text-wrap lg:mt-4 lg:text-base">{{ tvDetails.overview }}</p>
 
             <div class="flex mt-4 gap-4 flex-wrap">
                 <button

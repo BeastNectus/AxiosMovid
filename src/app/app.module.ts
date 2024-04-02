@@ -1,5 +1,5 @@
 
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -28,6 +28,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+//   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

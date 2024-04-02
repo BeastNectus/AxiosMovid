@@ -46,7 +46,7 @@ export class TvDetailComponent implements OnInit {
                 }
             },
             (error: any) => {
-                // console.error('Error fetching season details:', error);
+                console.error('Error fetching season details:', error);
             }
         );
     }
@@ -74,11 +74,11 @@ export class TvDetailComponent implements OnInit {
         this.tvDetailsService.getTvDetails(tvId).subscribe(
             (response) => {
                 this.tvDetails = response;
-                // console.log('TV details:', this.tvDetails);
+                console.log('TV details:', this.tvDetails);
                 this.fetchSeasonDetails(tvId, this.tvDetails.number_of_seasons);
             },
             (error: any) => {
-                // console.error('Error fetching TV details:', error);
+                console.error('Error fetching TV details:', error);
             }
         );
     }
@@ -91,10 +91,10 @@ export class TvDetailComponent implements OnInit {
         forkJoin(observables).subscribe(
             (responses) => {
                 this.seasonDetails = responses;
-                // console.log('Season details:', this.seasonDetails);
+                console.log('Season details:', this.seasonDetails);
             },
             (error: any) => {
-                // console.error('Error fetching season details:', error);
+                console.error('Error fetching season details:', error);
             }
         );
     }

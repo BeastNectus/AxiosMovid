@@ -1,6 +1,11 @@
-<div class="h-[80vh] flex justify-center items-center">
-    <div class="pt-[10rem] pb-8 px-4 mb-8 rounded-md text-center">
-        <h1 class="text-white text-[5rem] text-center font-bold">Welcome to MoVid 🍿</h1>
+<div class="h-screen flex justify-center items-center relative">
+    <!-- Background image -->
+    <!-- <img src="../../../assets/img/banner-bg.jpg" class="absolute w-full h-screen object-cover"> -->
+
+    <div class="absolute top-0 left-0 w-full bg-black opacity-50 h-screen"></div>
+
+    <div class="pt-[10rem] pb-8 px-4 mb-8 rounded-md text-center z-10 relative">
+        <h1 class="text-white text-[5rem] text-center font-bold">Welcome to <span class="text-yellow-500">MoVid</span> 🍿</h1>
         <div class="p-8 flex flex-col items-center">
             <h1 class="text-white text-3xl font-bold mb-4">Search Movies / TvShow</h1>
             <div class="mb-4">
@@ -17,6 +22,8 @@
         </div>
     </div>
 </div>
+
+
 
 <div class="p-8 pt-0 mb-4 flex flex-col items-center" *ngIf="showSearchResults && searchQuery">
     <h1 class="text-white text-3xl font-bold mb-4">Search Results</h1>
@@ -44,7 +51,7 @@
 </div>
 
 <div class="h-[50vh]">
-a
+    <h1 class="text-yellow-500 text-[2rem] text-center font-bold">Watch Movies and TV Shows For Free</h1>
 </div>
 
 <div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-movies">
