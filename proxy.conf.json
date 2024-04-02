@@ -1,0 +1,7 @@
+{
+    "/api": {
+      "target": "https://vidsrc.to",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }

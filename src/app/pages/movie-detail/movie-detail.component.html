@@ -1,0 +1,13 @@
+<div *ngIf="movieDetails" class="flex flex-col p-8">
+    <iframe [src]="getSafeUrl(movieDetails.id)" frameborder="0" class="w-full mt-8 sm:mt-0 h-[800px] sm:h-[700px] border-b-[5px]"></iframe>
+    <div class="rounded-lg shadow-md p-6 flex flex-col sm:flex-row items-center">
+        <div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4 lg:mr-8">
+            <img [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path" alt="{{ movieDetails.title }} Poster" class="w-full h-auto sm:w-48 lg:w-64 rounded-lg">
+        </div>
+        <div class="flex flex-col justify-center">
+            <h1 class="text-white text-2xl font-bold mb-2">{{ movieDetails.title }}</h1>
+            <p class="text-white">Release Date: {{ movieDetails.release_date }}</p>
+            <p class="text-white mt-2 sm:text-wrap lg:mt-4 lg:text-base">{{ movieDetails.overview }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div *ngIf="tvDetails" class="flex flex-col p-8">
+    <iframe [src]="selectedEpisodeUrl" frameborder="0" class="w-full mt-8 sm:mt-0 h-[800px] sm:h-[700px] border-b-[5px]" muted (load)="onIframeLoad()"></iframe>
+
+    <div class="rounded-lg shadow-md p-6 flex flex-col sm:flex-row items-start">
+        <div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4 lg:mr-8">
+            <img
+                [src]="'https://image.tmdb.org/t/p/w500' + tvDetails.poster_path"
+                alt="{{ tvDetails.original_name }} Poster"
+                class="w-full h-auto sm:w-48 lg:w-64 rounded-lg" />
+        </div>
+
+        <div class="flex flex-col justify-center">
+            <h1 class="text-white text-2xl font-bold mb-2">{{ tvDetails.original_name }}</h1>
+            <p class="text-white">Release Date: {{ tvDetails.release_date }}</p>
+            <p class="text-white mt-2 sm:text-wrap lg:mt-4 lg:text-base">{{ tvDetails.overview }}</p>
+
+            <div class="flex mt-4 gap-4 flex-wrap">
+                <button
+                    *ngFor="let season of seasonDetails"
+                    class="px-4 py-2 border text-white hover:text-black hover:bg-white font-semibold rounded-md"
+                    (click)="toggleEpisodeList(season)">
+                    {{ season.name }}
+                </button>
+            </div>
+            <div *ngFor="let season of seasonDetails">
+                <div *ngIf="season.showEpisodes" class="flex flex-col mt-8 gap-5">
+                    <h1 class="text-white font-semibold text-lg px-2">Episode List:</h1>
+                    <div *ngFor="let episode of season.episodes"
+                        [class.active]="selectedEpisode === episode"
+                        class="px-2 py-2 text-white hover:text-black hover:bg-white font-semibold rounded-md cursor-pointer"
+                        (click)="playEpisode(episode, season)">
+                        Ep.{{ episode.episode_number }}-{{ episode.name }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
