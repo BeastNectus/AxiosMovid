@@ -29,10 +29,10 @@ export class HomeComponent implements OnInit {
     this.movieService.getPopularMovies(page).subscribe(
       (response) => {
         this.popularMovies = response;
-        console.log('Popular Movies:', this.popularMovies);
+        // console.log('Popular Movies:', this.popularMovies);
       },
       (error) => {
-        console.error('Error fetching popular movies:', error);
+        // console.error('Error fetching popular movies:', error);
       }
     );
   }
@@ -41,10 +41,10 @@ export class HomeComponent implements OnInit {
     this.tvService.getPopularTvShows(page).subscribe(
       (response) => {
         this.popularTvShows = response;
-        console.log('Popular TV Shows:', this.popularTvShows);
+        // console.log('Popular TV Shows:', this.popularTvShows);
       },
       (error) => {
-        console.error('Error fetching popular TV shows:', error);
+        // console.error('Error fetching popular TV shows:', error);
       }
     );
   }
@@ -57,11 +57,11 @@ export class HomeComponent implements OnInit {
     this.multiSearchService.searchMovies(this.searchQuery).subscribe(
       (response: any) => {
         this.searchResults = response.results;
-        console.log('Search Results:', this.searchResults);
+        // console.log('Search Results:', this.searchResults);
         this.showSearchResults = true;
       },
       (error) => {
-        console.error('Error searching movies:', error);
+        // console.error('Error searching movies:', error);
       }
     );
   }

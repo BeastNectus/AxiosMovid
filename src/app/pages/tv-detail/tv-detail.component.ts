@@ -29,7 +29,7 @@ export class TvDetailComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.subscribe((params) => {
             this.tvId = +params['id'];
-            console.log('TV ID:', this.tvId);
+            // console.log('TV ID:', this.tvId);
             this.getTvDetails(this.tvId);
         });
     
@@ -46,7 +46,7 @@ export class TvDetailComponent implements OnInit {
                 }
             },
             (error: any) => {
-                console.error('Error fetching season details:', error);
+                // console.error('Error fetching season details:', error);
             }
         );
     }
@@ -74,11 +74,11 @@ export class TvDetailComponent implements OnInit {
         this.tvDetailsService.getTvDetails(tvId).subscribe(
             (response) => {
                 this.tvDetails = response;
-                console.log('TV details:', this.tvDetails);
+                // console.log('TV details:', this.tvDetails);
                 this.fetchSeasonDetails(tvId, this.tvDetails.number_of_seasons);
             },
             (error: any) => {
-                console.error('Error fetching TV details:', error);
+                // console.error('Error fetching TV details:', error);
             }
         );
     }
@@ -91,10 +91,10 @@ export class TvDetailComponent implements OnInit {
         forkJoin(observables).subscribe(
             (responses) => {
                 this.seasonDetails = responses;
-                console.log('Season details:', this.seasonDetails);
+                // console.log('Season details:', this.seasonDetails);
             },
             (error: any) => {
-                console.error('Error fetching season details:', error);
+                // console.error('Error fetching season details:', error);
             }
         );
     }
@@ -110,7 +110,7 @@ export class TvDetailComponent implements OnInit {
 
     playEpisode(episode: any, season: any): void {
         const episodeUrl = `https://vidsrc.to/embed/tv/${this.tvId}/${season.season_number}/${episode.episode_number}`;
-        console.log('Episode URL:', episodeUrl);
+        // console.log('Episode URL:', episodeUrl);
         this.selectedEpisode = episode;
         this.selectedEpisodeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(episodeUrl);
     }
