@@ -53,14 +53,14 @@
 </div>
 
 <div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-movies">
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center mb-4">
         <h1 class="text-white text-3xl font-bold mb-0 lg:mb-4">Popular Movies</h1>
         <button class="border text-white px-2 py-1 hover:text-black hover:bg-white font-semibold rounded-md" (click)="goToMovieList()">More</button>
     </div>
     <swiper-container class="mySwiper" [slidesPerView]="slidesPerView" navigation="true"
     space-between="30" free-mode="true">
         <ng-container *ngIf="popularMovies">
-            <swiper-slide *ngFor="let movie of popularMovies.results" class="flex items-center justify-center">
+            <swiper-slide *ngFor="let movie of popularMovies.results" class="flex items-center justify-center swiper-slide">
                 <div class="relative bg-white rounded-lg shadow-md overflow-hidden" style="width: 250px">
                     <img
                         [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
@@ -80,14 +80,14 @@
     </swiper-container>
 </div>
 <div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-tv-shows">
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between items-center mb-4">
         <h1 class="text-white text-3xl font-bold mb-0 lg:mb-4">Popular TV Shows</h1>
         <button class="border text-white px-2 py-1 hover:text-black hover:bg-white font-semibold rounded-md" (click)="goToTvList()">More</button>
     </div>
     <swiper-container class="mySwiper" [slidesPerView]="slidesPerView" navigation="true"
         space-between="30" free-mode="true">
         <ng-container *ngIf="popularTvShows">
-            <swiper-slide *ngFor="let tv of popularTvShows.results" class="flex items-center justify-center">
+            <swiper-slide *ngFor="let tv of popularTvShows.results" class="flex items-center justify-center swiper-slide">
                 <div class="relative bg-white rounded-lg shadow-md overflow-hidden" style="width: 250px">
                     <img [src]="'https://image.tmdb.org/t/p/w500' + tv.poster_path"
                         alt="{{ tv.original_name }} Poster"

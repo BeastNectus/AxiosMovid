@@ -36,3 +36,7 @@
     --swiper-theme-color: #EAB308;
     --swiper-navigation-size: 44px;
 }
+
+.swiper-slide {
+    min-width: 250px; /* Adjust the minimum width as needed */
+}
