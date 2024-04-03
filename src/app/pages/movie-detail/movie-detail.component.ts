@@ -27,10 +27,10 @@ export class MovieDetailComponent implements OnInit {
     this.apiService.getMovieDetails(movieId).subscribe(
       (response) => {
         this.movieDetails = response;
-        console.log('Movie details:', this.movieDetails);
+        // console.log('Movie details:', this.movieDetails);
       },
       (error: any) => {
-        console.error('Error fetching movie details:', error);
+        // console.error('Error fetching movie details:', error);
       }
     );
   }
