@@ -10,6 +10,8 @@ import { MovieDetailComponent } from './pages/movie-detail/movie-detail.componen
 import { TvDetailComponent } from './pages/tv-detail/tv-detail.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MovieListComponent } from './pages/movie-list/movie-list.component';
+import { TvListComponent } from './pages/tv-list/tv-list.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { NavbarComponent } from './navbar/navbar.component';
     NavbarComponent,
     HomeComponent,
     MovieDetailComponent,
-    TvDetailComponent
+    TvDetailComponent,
+    MovieListComponent,
+    TvListComponent
   ],
   imports: [
     BrowserModule,

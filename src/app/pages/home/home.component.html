@@ -52,42 +52,11 @@
     <h1 class="text-yellow-500 text-[2rem] text-center font-bold">Watch Movies and TV Shows For Free</h1>
 </div>
 
-<!-- <div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-movies">
-    <h1 class="text-white text-3xl font-bold mb-4">Popular Movies</h1>
-    <div *ngIf="popularMovies" class="overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 relative">
-        <div class="flex relative">
-            <div *ngFor="let movie of popularMovies.results" class="flex-shrink-0 mr-4">
-                <div class="relative bg-white rounded-lg shadow-md overflow-hidden" style="width: 250px">
-                    <img
-                        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
-                        alt="{{ movie.title }} Poster"
-                        class="w-full h-[25rem] transition-transform duration-300 transform hover:scale-105" />
-                    <div
-                        class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 cursor-pointer"
-                        (click)="goToMovieDetail(movie.id)">
-                        <div class="overlay"></div>
-                        <div class="p-4 text-center w-full z-50">
-                            <h2 class="text-white text-2xl font-bold mb-2 text-wrap">Play now</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sticky bottom-0 inset-x-0 flex justify-between mb-4 mt-4">
-            <button class="border text-white px-2 py-1 hover:text-black hover:bg-white font-semibold rounded-md" (click)="prevPageMovies()">
-                PREV
-            </button>
-            <button class="border text-white px-2 py-1 font-semibold rounded-md">
-                Page {{ currentMoviePage }}
-            </button>
-            <button class="border text-white px-2 py-1 hover:text-black hover:bg-white font-semibold rounded-md" (click)="nextPageMovies()">
-                NEXT
-            </button>
-        </div>
-    </div>
-</div> -->
 <div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-movies">
-    <h1 class="text-white text-3xl font-bold mb-4">Popular Movies</h1>
+    <div class="flex justify-between items-center">
+        <h1 class="text-white text-3xl font-bold mb-4">Popular Movies</h1>
+        <button class="border text-white px-2 py-1 hover:text-black hover:bg-white font-semibold rounded-md" (click)="goToMovieList()">More</button>
+    </div>
     <swiper-container class="mySwiper" [slidesPerView]="slidesPerView" navigation="true"
     space-between="30" free-mode="true" [loop]="true">
         <ng-container *ngIf="popularMovies">
@@ -111,7 +80,10 @@
     </swiper-container>
 </div>
 <div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-tv-shows">
-    <h1 class="text-white text-3xl font-bold mb-4">Popular TV Shows</h1>
+    <div class="flex justify-between items-center">
+        <h1 class="text-white text-3xl font-bold mb-4">Popular TV Shows</h1>
+        <button class="border text-white px-2 py-1 hover:text-black hover:bg-white font-semibold rounded-md" (click)="goToTvList()">More</button>
+    </div>
     <swiper-container class="mySwiper" [slidesPerView]="slidesPerView" navigation="true"
         space-between="30" free-mode="true" [loop]="true">
         <ng-container *ngIf="popularTvShows">

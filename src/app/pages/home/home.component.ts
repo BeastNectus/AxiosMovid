@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   searchQuery: string = '';
   searchResults: any[] = [];
   showSearchResults: boolean = false;
-  slidesPerView: number = 5;
+  slidesPerView: number = 4;
   screenWidth!: number;
 
   constructor(private movieService: MoviePopular, private tvService: TvPopularService, private router: Router, private multiSearchService: MultiSearchService) {}
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
         } else if (this.screenWidth >= 480 && this.screenWidth <= 992) {
             this.slidesPerView = 3
         } else if (this.screenWidth >= 992 && this.screenWidth <= 1200) {
-            this.slidesPerView = 5
+            this.slidesPerView = 4
         }
     }
 
@@ -118,6 +118,14 @@ export class HomeComponent implements OnInit {
 
   goToTvShowDetail(tvId: number): void {
     this.router.navigate(['/tv', tvId]);
+  }
+
+  goToMovieList(): void {
+    this.router.navigate(['/movie-list']);
+  }
+
+  goToTvList(): void {
+    this.router.navigate(['/tv-list']);
   }
 
   searchgoToDetail(result: any): void {
