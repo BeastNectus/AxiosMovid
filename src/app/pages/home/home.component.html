@@ -23,9 +23,9 @@
     </div>
 </div>
 
-<div class="p-8 pt-0 mb-4 flex flex-col items-center justify-center h-screen" *ngIf="showSearchResults && searchQuery" id="search-results">
+<div class="p-8 pt-0 mb-4 flex flex-col items-center justify-center" *ngIf="showSearchResults && searchQuery" id="search-results">
     <h1 class="text-white text-3xl font-bold mb-4">Search Results</h1>
-    <div *ngIf="searchResults.length > 0" class="flex flex-wrap justify-center">
+    <div *ngIf="searchResults.length > 0" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         <div *ngFor="let result of searchResults" class="flex-shrink-0 mr-4 mb-4">
             <div class="relative bg-white rounded-lg shadow-md overflow-hidden w-auto">
                 <div class="flex">
