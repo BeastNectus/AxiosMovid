@@ -4,25 +4,35 @@
     background-color: rgba(0, 0, 0, 0.5);
     transition: opacity 0.3s ease;
     pointer-events: none; 
-  }
+}
   
-  .relative:hover .overlay {
+.relative:hover .overlay {
     opacity: 1;
-  }
+}
 
-  ::-webkit-scrollbar {
+::-webkit-scrollbar {
     height: 8px;
-  }
+}
 
-  ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
+}
 
-  ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 25px;
-  }
+}
 
-  ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
+}
+
+.mySwiper {
+    /* --swiper-pagination-color: #FFBA08;
+    --swiper-pagination-bullet-inactive-color: #999999;
+    --swiper-pagination-bullet-inactive-opacity: 0.2;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-horizontal-gap: 1px; */
+    --swiper-theme-color: #EAB308;
+    --swiper-navigation-size: 44px;
+}

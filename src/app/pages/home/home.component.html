@@ -23,9 +23,7 @@
     </div>
 </div>
 
-
-
-<div class="p-8 pt-0 mb-4 flex flex-col items-center" *ngIf="showSearchResults && searchQuery">
+<div class="p-8 pt-0 mb-4 flex flex-col items-center justify-center h-screen" *ngIf="showSearchResults && searchQuery" id="search-results">
     <h1 class="text-white text-3xl font-bold mb-4">Search Results</h1>
     <div *ngIf="searchResults.length > 0" class="flex flex-wrap justify-center">
         <div *ngFor="let result of searchResults" class="flex-shrink-0 mr-4 mb-4">
@@ -50,11 +48,11 @@
     <div *ngIf="searchResults.length === 0" class="text-white">No search results found.</div>
 </div>
 
-<div class="h-[50vh]">
+<div class="h-[50vh] flex items-center justify-center">
     <h1 class="text-yellow-500 text-[2rem] text-center font-bold">Watch Movies and TV Shows For Free</h1>
 </div>
 
-<div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-movies">
+<!-- <div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-movies">
     <h1 class="text-white text-3xl font-bold mb-4">Popular Movies</h1>
     <div *ngIf="popularMovies" class="overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 relative">
         <div class="flex relative">
@@ -87,19 +85,43 @@
             </button>
         </div>
     </div>
-</div>
-<div class="pl-8 pr-8 flex flex-col justify-center h-screen" id="popular-tv-shows">
-    <h1 class="text-white text-3xl font-bold mb-4">Popular TV Shows</h1>
-    <div *ngIf="popularTvShows" class="overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 relative">
-        <div class="flex relative">
-            <div *ngFor="let tv of popularTvShows.results" class="flex-shrink-0 mr-4">
+</div> -->
+<div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-movies">
+    <h1 class="text-white text-3xl font-bold mb-4">Popular Movies</h1>
+    <swiper-container class="mySwiper" slides-per-view="5" navigation="true"
+    space-between="30" free-mode="true" [loop]="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+        <ng-container *ngIf="popularMovies">
+            <swiper-slide *ngFor="let movie of popularMovies.results" class="flex items-center justify-center">
                 <div class="relative bg-white rounded-lg shadow-md overflow-hidden" style="width: 250px">
                     <img
-                        [src]="'https://image.tmdb.org/t/p/w500' + tv.poster_path"
-                        alt="{{ tv.original_name }} Poster"
+                        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+                        alt="{{ movie.title }} Poster"
                         class="w-full h-[25rem] transition-transform duration-300 transform hover:scale-105" />
                     <div
                         class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 cursor-pointer"
+                        (click)="goToMovieDetail(movie.id)">
+                        <div class="overlay"></div>
+                        <div class="p-4 text-center w-full z-50">
+                            <h2 class="text-white text-2xl font-bold mb-2 text-wrap">Play now</h2>
+                        </div>
+                    </div>
+                </div>
+            </swiper-slide>
+        </ng-container>
+    </swiper-container>
+</div>
+<div class="pl-8 pr-8 flex justify-center flex-col h-screen" id="popular-tv-shows">
+    <h1 class="text-white text-3xl font-bold mb-4">Popular TV Shows</h1>
+    <swiper-container class="mySwiper" slides-per-view="5" navigation="true"
+        space-between="30" free-mode="true" [loop]="true" autoplay-delay="2500"
+        autoplay-disable-on-interaction="false">
+        <ng-container *ngIf="popularTvShows">
+            <swiper-slide *ngFor="let tv of popularTvShows.results" class="flex items-center justify-center">
+                <div class="relative bg-white rounded-lg shadow-md overflow-hidden" style="width: 250px">
+                    <img [src]="'https://image.tmdb.org/t/p/w500' + tv.poster_path"
+                        alt="{{ tv.original_name }} Poster"
+                        class="w-full h-[25rem] transition-transform duration-300 transform hover:scale-105" />
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 cursor-pointer"
                         (click)="goToTvShowDetail(tv.id)">
                         <div class="overlay"></div>
                         <div class="p-4 text-center w-full z-50">
@@ -107,18 +129,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="sticky bottom-0 inset-x-0 flex justify-between mb-4 mt-4">
-            <button class="border text-white px-2 py-1 hover:text-black hover:bg-white font-semibold rounded-md" (click)="prevPageTvShows()">
-                PREV
-            </button>
-            <button class="border text-white px-2 py-1 font-semibold rounded-md">
-                Page {{ currentTvPage }}
-            </button>
-            <button class="border text-white px-2 py-1 hover:text-black hover:bg-white font-semibold rounded-md" (click)="nextPageTvShows()">
-                NEXT
-            </button>
-        </div>
-    </div>
+            </swiper-slide>
+        </ng-container>
+    </swiper-container>
 </div>
+

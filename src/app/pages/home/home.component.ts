@@ -59,11 +59,19 @@ export class HomeComponent implements OnInit {
         this.searchResults = response.results;
         // console.log('Search Results:', this.searchResults);
         this.showSearchResults = true;
+        this.scrollToSearchResults();
       },
       (error) => {
         // console.error('Error searching movies:', error);
       }
     );
+  }
+
+  scrollToSearchResults() {
+    const searchResultsSection = document.getElementById('search-results');
+    if (searchResultsSection) {
+      searchResultsSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   nextPageMovies(): void {
