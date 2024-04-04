@@ -1,5 +1,5 @@
 <div *ngIf="movieDetails" class="flex flex-col p-8">
-    <iframe [src]="getSafeUrl(movieDetails.id)" frameborder="0" class="w-full mt-8 sm:mt-0 h-[800px] sm:h-[700px] border-b-[5px]"></iframe>
+    <iframe [src]="getSafeUrl(movieDetails.id)" frameborder="0" class="w-full mt-8 sm:mt-0 h-[800px] sm:h-[700px] border-b-[5px]" allowfullscreen></iframe>
     <div class="rounded-lg shadow-md p-6 flex flex-col sm:flex-row items-start">
         <div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4 lg:mr-8">
             <img [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path" alt="{{ movieDetails.title }} Poster" class="w-full h-auto sm:w-48 lg:w-64 rounded-lg">

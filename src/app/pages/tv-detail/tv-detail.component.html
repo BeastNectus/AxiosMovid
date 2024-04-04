@@ -1,5 +1,5 @@
 <div *ngIf="tvDetails" class="flex flex-col p-8">
-    <iframe [src]="selectedEpisodeUrl" frameborder="0" class="w-full mt-8 sm:mt-0 h-[800px] sm:h-[700px] border-b-[5px]" muted (load)="onIframeLoad()"></iframe>
+    <iframe [src]="selectedEpisodeUrl" frameborder="0" class="w-full mt-8 sm:mt-0 h-[800px] sm:h-[700px] border-b-[5px]" allowfullscreen ></iframe>
 
     <div class="rounded-lg shadow-md p-6 flex flex-col sm:flex-row items-start">
         <div class="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4 lg:mr-8">

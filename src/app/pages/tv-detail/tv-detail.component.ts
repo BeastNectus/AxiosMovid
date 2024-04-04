@@ -51,23 +51,7 @@ export class TvDetailComponent implements OnInit {
         );
     }
 
-    onIframeLoad(): void {
-        const iframe = document.querySelector('iframe');
-        if (iframe) {
-            const iframeWindow = iframe.contentWindow;
-            if (iframeWindow) {
-                const iframeDocument = iframeWindow.document;
-                if (iframeDocument) {
-                    const videoElements = iframeDocument.getElementsByTagName('video');
-                    if (videoElements.length > 0) {
-                        const video = videoElements[0];
-                        video.muted = false;
-                        video.volume = 1;
-                    }
-                }
-            }
-        }
-    }
+
     
 
     getTvDetails(tvId: number): void {
