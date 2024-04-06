@@ -11,6 +11,10 @@
             <p class="text-white font-semibold">Vote Average: <span class="text-yellow-500">{{ movieDetails.vote_average }}</span></p>
             <p class="text-white font-semibold">Vote Count: <span class="text-yellow-500">{{ movieDetails.vote_count }}</span></p>
             <p class="text-white font-semibold">Language: <span class="text-yellow-500">{{ movieDetails.original_language }}</span></p>
+            <div class="text-white font-semibold">
+                Genres: <span class="text-yellow-500">{{ getGenreNames() }}</span>
+            </div>
+
             <p class="text-white mt-2 sm:text-wrap lg:mt-4 lg:text-base">{{ movieDetails.overview }}</p>
         </div>
     </div>

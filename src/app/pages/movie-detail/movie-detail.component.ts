@@ -39,4 +39,8 @@ export class MovieDetailComponent implements OnInit {
     const url = `https://vidsrc.to/embed/movie/${id}`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
+
+  getGenreNames(): string {
+    return this.movieDetails.genres.map((genre: { name: string }) => genre.name).join(', ');
+}
 }
