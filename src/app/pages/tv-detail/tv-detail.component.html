@@ -16,8 +16,11 @@
             <p class="text-white font-semibold">Vote Average: <span class="text-yellow-500">{{ tvDetails.vote_average }}</span></p>
             <p class="text-white font-semibold">Vote Count: <span class="text-yellow-500">{{ tvDetails.vote_count }}</span></p>
             <p class="text-white font-semibold">Country: <span class="text-yellow-500">{{ tvDetails.origin_country }}</span></p>
-            <p class="text-white font-semibold mt-2 sm:text-wrap lg:mt-4 lg:text-base">{{ tvDetails.overview }}</p>
+            <div class="text-white font-semibold">
+                Genres: <span class="text-yellow-500">{{ getGenreNames() }}</span>
+            </div>
 
+            <p class="text-white font-semibold mt-2 sm:text-wrap lg:mt-4 lg:text-base">{{ tvDetails.overview }}</p>
             <div class="flex mt-4 gap-4 flex-wrap">
                 <button
                     *ngFor="let season of seasonDetails"

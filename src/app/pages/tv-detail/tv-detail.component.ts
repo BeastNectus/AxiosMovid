@@ -104,4 +104,7 @@ export class TvDetailComponent implements OnInit {
         return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     }
     
+    getGenreNames(): string {
+        return this.tvDetails.genres.map((genre: { name: string }) => genre.name).join(', ');
+    }
 }
